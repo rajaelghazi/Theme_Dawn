@@ -1,6 +1,6 @@
 <div class="bg-white text-black border-t lg:py-11 py-8 ">
 
-    <div class="flex lg:flex-row flex-col lg:justify-between justify-center items-center lg:px-52 px-9 ">
+    <div class="flex lg:flex-row flex-col lg:justify-between justify-center items-center mx-auto max-w-6xl sm:px-6 lg:px-5 px-5 ">
 
         <div class="text-[#747474] text-xs lg:mb-0 mb-3">
             © 2025, theme-dawn, all right reserved

@@ -6,17 +6,20 @@
             class="w-full h-64 object-cover transition-opacity duration-300 group-hover:opacity-0">
         @if (count($images) > 1)
             <img src="{{ asset($images[1]) }}" alt="{{ $name }}"
-                class="w-full h-64 object-cover absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                class="w-full h-64 object-cover absolute inset-0 opacity-0 transition-all duration-300 group-hover:opacity-100">
         @endif
 
         @if ($onSale)
             <span
-                class="absolute bottom-2 left-2 px-3 py-1 text-xs font-medium text-white bg-blue-500 rounded-full m-2">Sale</span>
+                class="absolute bottom-2 left-2 px-3 py-1 text-xs font-medium text-white bg-blue-500 rounded-full m-2">
+                Sale
+            </span>
         @endif
         @if ($soldout)
             <span
-                class="absolute bottom-2 left-2 px-3 py-1 text-xs font-medium text-white bg-gray-700 rounded-full m-2">Sold
-                Out</span>
+                class="absolute bottom-2 left-2 px-3 py-1 text-xs font-medium text-white bg-gray-700 rounded-full m-2">
+                Sold Out
+            </span>
         @endif
     </div>
 

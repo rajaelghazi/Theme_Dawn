@@ -1,4 +1,4 @@
-<div class="flex flex-col justify-center items-center lg:px-52 px-9 py-10">
+<div class="flex flex-col justify-center items-center mx-auto max-w-6xl sm:px-6 lg:px-5 px-5 py-10">
     <div class=" lg:text-4xl text-3xl font-normal text-center ">
         Obsessive Attention. Intelligent Effort.
     </div>

@@ -1,4 +1,4 @@
-<footer class="bg-white text-black pt-20 lg:px-52 px-9">
+<footer class="bg-white text-black pt-20 mx-auto max-w-6xl sm:px-6 lg:px-5 px-5">
 
     <div class="flex flex-col lg:flex-row justify-start items-start lg:pb-11 pb-8">
 
