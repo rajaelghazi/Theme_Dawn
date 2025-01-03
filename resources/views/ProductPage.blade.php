@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-    <div class="bg-white">
-        <div class="pb-16 pt-6 sm:pb-24">
-            <nav aria-label="Breadcrumb" class="mx-auto max-w-6xl sm:px-6 lg:px-5 px-5">
+    <div class="bg-white flex flex-col mx-auto max-w-6xl sm:px-6 lg:px-5 px-5">
+        <div class=" pt-6 sm:pb-24">
+            <nav aria-label="Breadcrumb" class="">
                 <ol role="list" class="flex items-center space-x-4">
                     <li>
                         <div class="flex items-center">
@@ -28,7 +28,7 @@
                     </li>
                 </ol>
             </nav>
-            <div class="mt-8 mx-auto max-w-6xl sm:px-6 lg:px-5 px-5">
+            <div class="mt-8 ">
                 <div class="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
                     <div class="lg:col-span-5 lg:col-start-8">
                         <div class="flex justify-between">
@@ -49,18 +49,11 @@
                         <h2 class="sr-only">Images</h2>
 
                         <div class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-3 lg:gap-5">
-                            <img src="{{ 'images/product1.jpg' }}"
-                                alt=""
-                                class=" lg:col-span-3 lg:row-span-3">
-                            <img src="{{ 'images/product11.jpg' }}"
-                                alt="Side "
-                                class="hidden  lg:block">
-                            <img src="{{ 'images/product11.jpg' }}"
-                                alt="" class="hidden  lg:block">
-                            <img src="{{ 'images/product11.jpg' }}"
-                                alt="" class="hidden  lg:block">
-                            <img src="{{ 'images/product11.jpg' }}"
-                                alt="" class="hidden  lg:block">
+                            <img src="{{ 'images/product1.jpg' }}" alt="" class=" lg:col-span-3 lg:row-span-3">
+                            <img src="{{ 'images/product11.jpg' }}" alt="Side " class="hidden  lg:block">
+                            <img src="{{ 'images/product11.jpg' }}" alt="" class="hidden  lg:block">
+                            <img src="{{ 'images/product11.jpg' }}" alt="" class="hidden  lg:block">
+                            <img src="{{ 'images/product11.jpg' }}" alt="" class="hidden  lg:block">
                         </div>
                     </div>
 
@@ -136,6 +129,39 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="flex flex-col mb-11">
+
+            <div class="lg:text-2xl text-xl font-normal text-left mb-11">
+                You may also like
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-2 w-full">
+                <x-ui.product :images="['images/product1.jpg', 'images/product11.jpg']" link="/product" name="Small Convertible Flex Bag" originPrice="540"
+                    Price="350.79" :onSale="true" :soldout="false" :colors="['#8B4513', '#A0522D']" />
+
+                <x-ui.product :images="['images/product2.jpg', 'images/product22.jpg']" link="/product" name="Pleated Heel Mule" originPrice="350.79"
+                    Price="360.8" :onSale="false" :soldout="true" :colors="['#F4A300', '#1E3A8A', '#6B7280']" />
+
+                <x-ui.product :images="['images/product3.jpg', 'images/product33.jpg']" link="/product" name="Louise Slide Sandal" originPrice="550"
+                    Price="320.34" :onSale="true" :soldout="false" onSale :colors="[]" />
+
+                <x-ui.product :images="['images/product4.jpg', 'images/product44.jpg']" link="/product" name="Studio Bag" originPrice="350.79" Price="360.8"
+                    :onSale="false" :soldout="false" soldout :colors="['#4B5563', '#4B4F54', '#D2691E']" />
+
+                <x-ui.product :images="['images/product5.jpg', 'images/product55.jpg']" link="/product" name="JHelix" originPrice="350.79" Price="360.8"
+                    :onSale="true" :soldout="false" :colors="[]" />
+
+                <x-ui.product :images="['images/product1.jpg', 'images/product11.jpg']" link="/product" name="Small Convertible Flex Bag" originPrice="350.79"
+                    Price="360.8" :onSale="false" :soldout="false" :colors="[]" />
+
+                <x-ui.product :images="['images/product2.jpg', 'images/product22.jpg']" link="/product" name="Pleated Heel Mule" originPrice="350.79"
+                    Price="300" :onSale="true" :soldout="true" soldout :colors="['#D1D5DB', '#1E3A8A', '#8B4513']" />
+
+                <x-ui.product :images="['images/product3.jpg', 'images/product33.jpg']" link="/product" name="Louise Slide Sandal" originPrice="550"
+                    Price="320.34" :onSale="false" :soldout="true" onSale :colors="['#9CA3AF']" />
+
             </div>
         </div>
     </div>
