@@ -1,12 +1,12 @@
-<div class="flex flex-col justify-center items-center mx-52 py-10">
-    <div class=" text-4xl font-normal">
+<div class="flex flex-col justify-center items-center lg:px-52 px-9 py-10">
+    <div class=" lg:text-4xl text-3xl font-normal text-center ">
         Obsessive Attention. Intelligent Effort.
     </div>
-    <div class="mt-5 text-[#4d4d4d]">
+    <div class="mt-5 lg:text-base text-[.85rem] text-[#4d4d4d] text-center">
         Functional handbags made of luxurious materials to improve people's lives in small but mighty ways.
     </div>
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 w-full mt-11">
+    <div class="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-2 w-full mt-11">
         <x-ui.product :images="['images/product1.jpg', 'images/product11.jpg']" link="/product" name="Small Convertible Flex Bag" originPrice="540" Price="350.79"
             :onSale="true" :soldout="false" :colors="['#8B4513', '#A0522D']" />
 

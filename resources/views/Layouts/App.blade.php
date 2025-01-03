@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'User Roles and Permissions Guide') }}</title>
+    <title>DAWN</title>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Fonts -->
@@ -33,9 +33,9 @@
         <main class="">
             @yield('content')
         </main>
-{{-- 
+
         <x-common.footer />
-        <x-common.copyright /> --}}
+        <x-common.copyright />
 
     </div>
 </body>
