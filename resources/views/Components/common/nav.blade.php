@@ -26,7 +26,7 @@
 
             <div class="lg:flex space-x-6 hidden">
                 <template x-for="(item, index) in menuItems" :key="index">
-                    <div class="relative">
+                    <div class="relative" x-data="{ openDropdown: null }" @click.outside="openDropdown = null">
                         <a :href="item.url ? '/' + item.url : '#'"
                             class="text-[#747474] hover:text-black flex items-center space-x-1"
                             @click="openDropdown === index ? openDropdown = null : openDropdown = index">
@@ -41,10 +41,10 @@
                             </template>
                         </a>
 
-                        <template x-if="item.dropdown && openDropdown === index">
+                        <template x-if="item.dropdown && openDropdown === index" >
                             <div
-                                class="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-md py-2 z-20">
-                                <template x-for="dropdownItem in item.dropdown" :key="dropdownItem.name">
+                                class="absolute top-full left-0 mt-2 w-40 bg-white border border-gray-200 shadow-lg rounded-md py-2 z-20">
+                                <template x-for="dropdownItem in item.dropdown" :key="dropdownItem.name" >
                                     <a :href="dropdownItem.url"
                                         class="block px-4 py-2 text-[.9rem] hover:bg-gray-100 hover:text-black hover:underline"
                                         x-text="dropdownItem.name" @click="openDropdown = null">
@@ -57,13 +57,48 @@
             </div>
         </div>
 
-        <div x-show="!sidebarOpen" class="flex space-x-6 items-center">
+        <div x-data="{ showLanguageDropdown: false }" x-show="!sidebarOpen" class="flex lg:space-x-6 space-x-3 items-center">
             <div @click="showSearch = true" class="cursor-pointer block">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                 </svg>
+            </div>
+
+            <div class="relative">
+                <div @click="showLanguageDropdown = !showLanguageDropdown" class="flex cursor-pointer text-black">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m5 8 6 6" />
+                        <path d="m4 14 6-6 2-3" />
+                        <path d="M2 5h12" />
+                        <path d="M7 2h1" />
+                        <path d="m22 22-5-10-5 10" />
+                        <path d="M14 18h6" />
+                    </svg>
+                </div>
+
+                <div x-show="showLanguageDropdown" @click.outside="showLanguageDropdown = false"
+                    class="absolute top-full right-0 mt-2 w-40 bg-white border border-gray-200 shadow-lg rounded-md py-2 z-20">
+
+                    <a href="#"
+                        class="block px-4 py-2 text-[.9rem] hover:bg-gray-100 hover:text-black hover:underline"
+                        @click="showLanguageDropdown = false">
+                        English
+                    </a>
+                    <a href="#"
+                        class="block px-4 py-2 text-[.9rem] hover:bg-gray-100 hover:text-black hover:underline"
+                        @click="showLanguageDropdown = false">
+                        Arabic
+                    </a>
+                    <a href="#"
+                        class="block px-4 py-2 text-[.9rem] hover:bg-gray-100 hover:text-black hover:underline"
+                        @click="showLanguageDropdown = false">
+                        French
+                    </a>
+
+                </div>
             </div>
 
             <div>
@@ -77,7 +112,6 @@
             </div>
         </div>
 
-        <!-- Sidebar Menu (for mobile) -->
         <div x-show="sidebarOpen" x-transition class="fixed inset-0 bg-gray-200 bg-opacity-50 z-30 lg:hidden">
             <div class="flex flex-col bg-white w-72 h-full px-8 py-12 space-y-6">
                 <button @click="sidebarOpen = false" class="text-black absolute top-7 left-5">
